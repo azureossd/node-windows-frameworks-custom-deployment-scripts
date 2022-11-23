@@ -100,13 +100,16 @@ call :SelectNodeVersion
 :: 3. Install npm packages
 IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   pushd "%DEPLOYMENT_TARGET%"
-  echo Running npm install --production..
+  echo Running npm install angular cli.
+  call :ExecuteCmd !NPM_CMD! install @angular/cli@13.0.0
+  echo Running npm install --production.
   call :ExecuteCmd !NPM_CMD! install --production
   echo Creating a production build, running npm run build..
   call :ExecuteCmd !NPM_CMD! run build
   IF !ERRORLEVEL! NEQ 0 goto error
   popd
 )
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 goto end
