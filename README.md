@@ -1,5 +1,5 @@
 # node-windows-spa-custom-deployment-scripts
-Examples of quickstart SPA's using custom deployment scripts on Node.js App Service Windows
+Examples of quickstart SPA's, SSR's, or Node frameworks requiring a build for client code or transpiling, using custom deployment scripts on Node.js App Service Windows
 
 To initiate a custom deployment script, we need two files:
 - a `.deployment` file which points to the actual deployment script we want to run
